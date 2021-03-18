@@ -5,8 +5,10 @@
 #Mac
 .DS_Store
 
-# vscode
-*.vscode
+# Vscode
+.vscode/*
+!.vscode/launch.json
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
