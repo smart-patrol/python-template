@@ -1,15 +1,18 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import logging
 import sys
 from pathlib import Path
 
 import click
-import mlmax
 from IPython.core import ultratb
+
+import demo_dsproject
 
 # fallback to debugger on error
 sys.excepthook = ultratb.FormattedTB(mode="Verbose", color_scheme="Linux", call_pdb=1)
+# turn UserWarning messages to errors to find the actual cause
+# import warnings
+# warnings.simplefilter("error")
 
 _logger = logging.getLogger(__name__)
 
@@ -26,7 +29,7 @@ _logger = logging.getLogger(__name__)
 @click.option("--quiet", "log_level", flag_value=logging.WARNING, default=True)
 @click.option("-v", "--verbose", "log_level", flag_value=logging.INFO)
 @click.option("-vv", "--very-verbose", "log_level", flag_value=logging.DEBUG)
-@click.version_option(mlmax.__version__)
+@click.version_option(demo_dsproject.__version__)
 def main(cfg_path: Path, log_level: int):
     logging.basicConfig(
         stream=sys.stdout,
@@ -34,8 +37,8 @@ def main(cfg_path: Path, log_level: int):
         datefmt="%Y-%m-%d %H:%M",
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
-    # YOUR CODE GOES HERE! Keep the main functionality in src/mlmax
-    # est = mlmax.models.Estimator()
+    # YOUR CODE GOES HERE! Keep the main functionality in src/demo_dsproject
+    # est = demo_dsproject.models.Estimator()
 
 
 if __name__ == "__main__":
