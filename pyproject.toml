@@ -8,4 +8,4 @@ build-backend = "setuptools.build_meta"
 version_scheme = "no-guess-dev"
 
 [tool.black]
-line-length = 88
+line-length = 79
