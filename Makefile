@@ -1,3 +1,12 @@
+help:
+  @echo "available commands"
+  @echo " - install    : installs all requirements"
+  @echo " - dev        : installs all development requirements"
+  @echo " - test       : run all unit tests"
+  @echo " - clean      : cleans up all folders"
+  @echo " - flake      : runs flake8 style checks"
+  @echo " - black      : runs blake formatting checks"
+  
 black:
 	black clumper tests setup.py --check
 flake:
