@@ -11,6 +11,9 @@ repos:
       - id: check-toml
       - id: forbid-new-submodules
       - id: requirements-txt-fixer
+      - id: check-added-large-files
+      - id: forbid-new-submodules
+      - id: detect-private-key
       - id: detect-aws-credentials
         args: [--allow-missing-credentials]
   - repo: https://gitlab.com/pycqa/flake8
@@ -49,12 +52,12 @@ repos:
     rev: v0.48.2
     hooks:
       - id: cfn-python-lint
+        files: templates/*.yaml
   - repo: https://github.com/codespell-project/codespell
     rev: v2.0.0
     hooks:
       - id: codespell
         name: codespell
         description: Checks for common misspellings in text files.
-        entry: codespell --ignore-words ignore-spelling-words.txt readme.md code.py
         language: python
         types: [text]
