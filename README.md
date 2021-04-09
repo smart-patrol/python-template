@@ -30,7 +30,8 @@ Optional and needed only once after `git clone`:
 3. install several [pre-commit] git hooks with:
    ```bash
    pre-commit install
-   # You might also want to run `pre-commit autoupdate`
+   # make sure hooks are updated
+   pre-commit autoupdate
    ```
    and checkout the configuration under `.pre-commit-config.yaml`.
    The `-n, --no-verify` flag of `git commit` can be used to deactivate pre-commit hooks temporarily.
