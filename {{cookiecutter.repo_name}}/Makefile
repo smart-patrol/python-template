@@ -3,15 +3,15 @@
 
 deps: ## install dependcies
 	  python -m pip install --upgrade pip
-	  python -m pip install black flake8 mccabe mypy pytest pylint pytest tox tox-gh-actions
+	  python -m pip install black flake8 mypy pytest pylint pytest tox tox-gh-actions
 
 lint: ##Lint and static check
-	  python -m flake8 src
-	  python -m pylint src
-	  python -m mypy src
+	  python -m flake8 {{cookiecutter.package_name}}
+	  python -m pylint {{cookiecutter.package_name}}
+	  python -m mypy"{{cookiecutter.package_name}}
 
 black:
-	black src tests setup.py --check
+	black {{cookiecutter.package_name}} tests setup.py --check
 
 test:
 	python -m pytest -ra
