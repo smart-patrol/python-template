@@ -1,0 +1,13 @@
+{
+  "project_name": "project",
+  "repo_name": "my-repo",
+  "author_name": "Charles Frenzel",
+  "description": "A short description of the project.",
+  "open_source_license": [
+    "No license file",
+    "MIT License",
+    "Apache-2.0 License"
+  ],
+  "python_interpreter": ["python3", "python"],
+  "package_name": "{{cookiecutter.project.lower().replace(' ', '_')}}"
+}
